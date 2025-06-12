@@ -1,5 +1,5 @@
 name: flutter_debouncing_controllers
-description: "A new Flutter package project."
+description: "Debouncing variants of flutter controllers."
 version: 0.0.1
 homepage: "https://github.com/oquad/flutter_debouncing_controllers"
 
