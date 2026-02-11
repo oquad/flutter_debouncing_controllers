@@ -1,3 +1,7 @@
+## 0.0.4
+
+* DebouncingSearchController and DebouncingTextController now have a `text` getter.
+
 ## 0.0.3
 
 * Added DebouncingValueNotifier. DebouncingSearchController and DebouncingTextController are now

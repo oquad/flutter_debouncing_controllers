@@ -7,6 +7,9 @@ class DebouncingSearchController extends ValueNotifier<TextEditingValue> {
   /// Original [SearchController].
   SearchController get searchController => _searchController;
 
+  /// Simpler way to get text.
+  String get text => value.text;
+
   /// The timer to notify about [TextEditingValue] change.
   ///
   /// Created when [_searchController]'s value changes.
