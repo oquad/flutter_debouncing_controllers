@@ -2,7 +2,7 @@
 
 Debouncing variants of flutter controllers.
 
-All controllers are intended to be drop-in replacements:
+Controllers that are intended to be drop-in replacements:
 
 ```dart
 /// before:
@@ -22,4 +22,15 @@ final searchController = SearchController()
 /// after:
 final searchController = DebouncingSearchController()
   ..addListener(_onSearchChange);
+```
+
+Simple change notifier:
+```dart
+final debouncingNotifier = DebouncingChangeNotifier()
+  ..addListener(_onChange);
+
+/// [_onChange] is called only once.
+debouncingNotifier.change();
+debouncingNotifier.change();
+debouncingNotifier.change();
 ```
