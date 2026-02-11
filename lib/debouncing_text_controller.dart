@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/widgets.dart';
 
 /// A drop-in replacement for [SearchController] with debounce [Duration].
-class DebouncingTextController extends TextEditingController {
+class DebouncingTextController extends ValueNotifier<TextEditingValue> {
   /// Original [TextEditingController] just in case.
   TextEditingController get textEditingController => _textEditingController;
 
@@ -21,11 +21,14 @@ class DebouncingTextController extends TextEditingController {
 
   /// Creates a [DebouncingTextController] with some debounce [duration].
   DebouncingTextController({
-    super.text,
+    String? text,
     Duration duration = const Duration(milliseconds: 300),
   }) : _textEditingController = TextEditingController(text: text),
        _debounceTimer = null,
-       _duration = duration {
+       _duration = duration,
+       super(
+         text == null ? TextEditingValue.empty : TextEditingValue(text: text),
+       ) {
     _textEditingController.addListener(_textEditingListener);
   }
 

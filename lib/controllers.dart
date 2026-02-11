@@ -1,3 +1,4 @@
 export 'package:flutter_debouncing_controllers/debouncing_search_controller.dart';
 export 'package:flutter_debouncing_controllers/debouncing_text_controller.dart';
 export 'package:flutter_debouncing_controllers/debouncing_change_notifier.dart';
+export 'package:flutter_debouncing_controllers/debouncing_value_notifier.dart';

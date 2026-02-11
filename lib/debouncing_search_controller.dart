@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 /// A drop-in replacement for [SearchController] with debounce [Duration].
-class DebouncingSearchController extends TextEditingController {
-  /// Original [SearchController] just in case.
+class DebouncingSearchController extends ValueNotifier<TextEditingValue> {
+  /// Original [SearchController].
   SearchController get searchController => _searchController;
 
   /// The timer to notify about [TextEditingValue] change.
@@ -24,7 +24,8 @@ class DebouncingSearchController extends TextEditingController {
     Duration duration = const Duration(milliseconds: 300),
   }) : _searchController = SearchController(),
        _debounceTimer = null,
-       _duration = duration {
+       _duration = duration,
+       super(TextEditingValue.empty) {
     _searchController.addListener(_searchListener);
   }
 

@@ -1,3 +1,8 @@
+## 0.0.3
+
+* Added DebouncingValueNotifier. DebouncingSearchController and DebouncingTextController are now
+  extending ValueNotifier<TextEditingValue>.
+
 ## 0.0.2
 
 * Added DebouncingChangeNotifier.
