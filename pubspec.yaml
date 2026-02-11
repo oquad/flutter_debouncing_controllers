@@ -1,6 +1,6 @@
 name: flutter_debouncing_controllers
 description: "Debouncing variants of flutter controllers."
-version: 0.0.2
+version: 0.0.3
 homepage: "https://github.com/oquad/flutter_debouncing_controllers"
 
 environment:
