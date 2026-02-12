@@ -1,3 +1,7 @@
+## 0.1.1
+
+* Readme and pubspec description fix.
+
 ## 0.1.0
 
 * All controllers and notifiers now have `lastChangeDateTime` and `untilNotify` getters. Package now
