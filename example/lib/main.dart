@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_debouncing_controllers/controllers.dart';
+import 'package:flutter_debouncing_controllers/flutter_debouncing_controllers.dart';
 
 void main() {
   runApp(
