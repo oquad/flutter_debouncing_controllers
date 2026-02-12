@@ -1,3 +1,7 @@
+## 0.1.2
+
+* `untilNotify` fix
+
 ## 0.1.1
 
 * Readme and pubspec description fix.
