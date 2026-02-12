@@ -9,8 +9,9 @@ mixin DebouncingMixin on ChangeNotifier {
   DateTime? get lastChangeDateTime => _debounceTimerStartDateTime;
 
   /// [Duration] until [notifyListeners] is called.
-  Duration? get untilNotify =>
-      lastChangeDateTime?.pass(DateTime.now().difference);
+  Duration? get untilNotify => lastChangeDateTime?.pass(
+    (dateTime) => duration - DateTime.now().difference(dateTime),
+  );
 
   /// Duration of each [_debounceTimer].
   late final Duration duration;
