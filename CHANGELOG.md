@@ -1,3 +1,8 @@
+## 0.1.0
+
+* All controllers and notifiers now have `lastChangeDateTime` and `untilNotify` getters. Package now
+  has example.
+
 ## 0.0.4
 
 * DebouncingSearchController and DebouncingTextController now have a `text` getter.
