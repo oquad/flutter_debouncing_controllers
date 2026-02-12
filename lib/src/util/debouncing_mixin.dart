@@ -19,7 +19,10 @@ mixin DebouncingMixin on ChangeNotifier {
   void change(VoidCallback specificChangeMethod) {
     _debounceTimer?.cancel();
     _debounceTimerStartDateTime = DateTime.now();
-    _debounceTimer = Timer(duration, specificChangeMethod);
+    _debounceTimer = Timer(duration, () {
+      _debounceTimerStartDateTime = null;
+      specificChangeMethod.call();
+    });
   }
 
   @override
