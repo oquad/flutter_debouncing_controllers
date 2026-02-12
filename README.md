@@ -1,8 +1,6 @@
 # flutter_debouncing_controllers
 
-Debouncing variants of flutter controllers and notifiers.
-
-Controllers that are intended to be nearly drop-in replacements:
+Debouncing variants of flutter controllers and notifiers. Nearly DROP-IN replacements!
 
 ```dart
 /// before:
@@ -12,7 +10,7 @@ final textController = TextController()
 TextField(controller: textController);
 
 /// after:
-final debouncingController = DebouncingTextController()
+final debouncingController = DebouncingTextController(duration: Duration(seconds: 2))
   ..addListener(_onTextChange);
 
 TextField(controller: debouncingController.textController);
@@ -26,7 +24,7 @@ final searchController = SearchController()
 SearchAnchor.bar(searchController: searchController, ...);
 
 /// after:
-final debouncingController = DebouncingSearchController()
+final debouncingController = DebouncingSearchController() // 300 ms by default
   ..addListener(_onSearchChange);
 
 SearchAnchor.bar(searchController: debouncingController.searchController, ...);
@@ -35,7 +33,7 @@ SearchAnchor.bar(searchController: debouncingController.searchController, ...);
 Useful debouncing versions of notifiers:
 
 ```dart
-final debouncingNotifier = DebouncingChangeNotifier()
+final debouncingNotifier = DebouncingChangeNotifier() // 300 ms by default
   ..addListener(_onChange);
 
 /// [_onChange] is called only once.
@@ -46,7 +44,7 @@ debouncingNotifier.change();
 
 ```dart
 
-final debouncingNotifier = DebouncingValueNotifier(1)
+final debouncingNotifier = DebouncingValueNotifier(1) // 300 ms by default
   ..addListener(_onChange);
 
 /// [_onChange] is called only once.
